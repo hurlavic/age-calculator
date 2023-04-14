@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(228, 238, 253);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 8%;
+    border-bottom-right-radius: 30px;
+    width: 40%;
+}
+
+/* form{
+    display: inline-block;
+} */
+input{
+    width: 80px;
+    padding: 1.5%;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid black;
+    margin-right: 2%;
+    margin-bottom: 10%;
+}
+input[type="text"] {
+padding: 5px 8px;
+font-size: 15px;
+}
+label{
+font-size: 8px;
+text-align: center;
+width: 100%;
+margin-left: 1%;
+}
+.labels{
+    margin-bottom: 1%;
+
+}
+.day-label{
+    margin-right: 22%;
+}
+.month-label{
+    margin-right: 17%;
+}
