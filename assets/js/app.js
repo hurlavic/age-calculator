@@ -26,5 +26,8 @@ form.addEventListener("submit", (e) => {
     if (year) {
       yearInput.style.border = "";
     }
-  }
+    }
+  else if(isNaN(day) || isNaN(month) || isNaN(year)){
+        errorContent.textContent = "Please enter numbers only"
+    }
 });
