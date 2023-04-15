@@ -22,26 +22,29 @@
 
   <body>
     <section>
-      <form action="submit">
-        <div class="labels">
-          <label for="day" class="day-label">DAY</label>
-          <label for="month" class="month-label">MONTH</label>
-          <label for="year" class="year-label">YEAR</label>
-        </div>
-        <div class="inputs">
-          <input type="text" id="day" placeholder="DD" maxlength="2">
-          <input type="text" id="month" placeholder="MM" maxlength="2">
-          <input type="text" id="year" placeholder="YYYY" maxlength="4">
-        </div>
-      </form>
-      <div class="divider">
+      <div class="align">
+        <form action="submit" class="form">
+          <div class="input-group">
+            <label for="day">DAY</label>
+            <input type="text" id="day" placeholder="DD" maxlength="2">
+          </div>
+          <div class="input-group">
+            <label for="month">MONTH</label>
+            <input type="text" id="month" placeholder="MM" maxlength="2">
+          </div>
+          <div class="input-group">
+            <label for="year">YEAR</label>
+            <input type="text" id="year" placeholder="YYYY" maxlength="4">
+          </div>
+          <button type="submit"><img src="/assets/images/download.png" alt="submit button" id="arrow"></button>
+        </form>
+        <div class="error"></div>
         <hr>
-        <img src="/assets/images/icon-arrow.svg" alt="arrow">
-      </div>
-      <div class="output">
-        <h2>- - <strong>years</strong></h2>
-        <h2>- - <strong>months</strong></h2>
-        <h2>- - <strong>days</strong></h2>
+        <div class="output">
+          <h2>- - <strong>years</strong></h2>
+          <h2>- - <strong>months</strong></h2>
+          <h2>- - <strong>days</strong></h2>
+        </div>
       </div>
     </section>
     <!-- <footer class="attribution">
