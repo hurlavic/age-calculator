@@ -3,7 +3,6 @@ let monthInput = document.querySelector("#month");
 let yearInput = document.querySelector("#year");
 let form = document.querySelector(".form");
 let errorContent = document.querySelector(".error");
-let button = document.querySelector("button");
 
 form.addEventListener("submit", (e) => {
   const day = dayInput.value;
@@ -26,16 +25,21 @@ form.addEventListener("submit", (e) => {
     if (year) {
       yearInput.style.border = "";
     }
+    return;
   } else if (isNaN(day) || isNaN(month) || isNaN(year)) {
     errorContent.textContent = "Please enter numbers only";
+    return;
   } else if (day > 31) {
     errorContent.textContent = "Enter a valid date";
     dayInput.style.border = "1px solid red";
+    return;
   } else if (month > 12) {
     errorContent.textContent = "Enter a valid month";
     monthInput.style.border = "1px solid red";
+    return;
   } else {
     ageResult();
+    return;
   }
 });
 
@@ -53,13 +57,8 @@ function ageResult() {
 
   const birthDate = new Date(yearOfBirth, monthOfBirth, dayOfBirth);
 
-  if (isNaN(yearOfBirth) || isNaN(monthOfBirth) || isNaN(dayOfBirth)) {
-    console.error("Invalid input: one or more fields is not a number");
-    return;
-  }
-
   if (birthDate > currentDate) {
-    console.error("Invalid input: birth date is in the future");
+    errorContent.textContent = "Error, birth year can't be in the future";
     return;
   }
 
@@ -81,4 +80,9 @@ function ageResult() {
   yearOutput.textContent = ageInYears;
   monthsOutput.textContent = ageInMonths;
   daysOutput.textContent = ageInDays;
+
+  errorContent.textContent = "";
+  dayInput.style.border = "";
+  monthInput.style.border = "";
+  yearInput.style.border = "";
 }
