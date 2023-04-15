@@ -52,7 +52,7 @@ function ageResult() {
   const monthsOutput = document.querySelector("#age-month");
   const daysOutput = document.querySelector("#age-day");
   const yearOfBirth = parseInt(yearInput.value);
-  const monthOfBirth = parseInt(monthInput.value);
+  const monthOfBirth = parseInt(monthInput.value) - 1;
   const dayOfBirth = parseInt(dayInput.value);
 
   const birthDate = new Date(yearOfBirth, monthOfBirth, dayOfBirth);
@@ -62,19 +62,19 @@ function ageResult() {
     return;
   }
 
-  let ageInYears = currentYear - yearOfBirth;
-  let ageInMonths = currentMonth - (monthOfBirth + 1);
+  let ageInYears = currentYear - yearOfBirth - 1;
+  let ageInMonths = currentMonth - (monthOfBirth + 1) + 12;
   let ageInDays = currentDay - dayOfBirth;
-
-  if (ageInMonths < 0 || (ageInMonths === 0 && ageInDays < 0)) {
-    ageInYears--;
-    ageInMonths += 12;
-  }
 
   if (ageInDays < 0) {
     const lastMonthDays = new Date(yearOfBirth, monthOfBirth + 1, 0).getDate();
     ageInDays = lastMonthDays - dayOfBirth + currentDay;
     ageInMonths--;
+  }
+
+  if (ageInMonths >= 12) {
+    ageInYears += Math.floor(ageInMonths / 12);
+    ageInMonths = ageInMonths % 12;
   }
 
   yearOutput.textContent = ageInYears;
