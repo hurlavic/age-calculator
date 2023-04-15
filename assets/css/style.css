@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+.header{
+    background-color: #ff4141;
+    padding: 5px;
+    color: yellow;
+    margin-top: -5%;
+    margin-bottom: 5%;
+}
 body {
   background-color: rgb(87, 87, 87);
   min-height: 100vh;
@@ -22,7 +29,7 @@ section {
   border-bottom-right-radius: 100px;
   width: 500px;
   position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.32), 0 4px 8px rgba(0, 0, 0, 0.16);
 }
 form {
   display: flex;
