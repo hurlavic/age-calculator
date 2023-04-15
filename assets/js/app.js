@@ -3,7 +3,7 @@ let monthInput = document.querySelector("#month");
 let yearInput = document.querySelector("#year");
 let form = document.querySelector(".form");
 let errorContent = document.querySelector(".error");
-// let button = document.querySelector("button")
+let button = document.querySelector("button")
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -31,14 +31,24 @@ form.addEventListener("submit", (e) => {
   } else if (day > 31) {
     errorContent.textContent = "Enter a valid date";
     dayInput.style.border = "1px solid red";
-    if (day) {
-      dayInput.style.border = "";
-    }
   } else if (month > 12) {
     errorContent.textContent = "Enter a valid month";
     monthInput.style.border = "1px solid red";
-    if (month) {
-      monthInput.style.border = "";
-    }
   }
 });
+
+function ageResult() {
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentYear = currentDate.getFullYear();
+
+    console.log(currentDay);
+    console.log(currentMonth);
+    console.log(currentYear);
+}
+
+ageResult();
+// button.addEventListener("click", () => {
+    
+// })
