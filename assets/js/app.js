@@ -26,8 +26,19 @@ form.addEventListener("submit", (e) => {
     if (year) {
       yearInput.style.border = "";
     }
+  } else if (isNaN(day) || isNaN(month) || isNaN(year)) {
+    errorContent.textContent = "Please enter numbers only";
+  } else if (day > 31) {
+    errorContent.textContent = "Enter a valid date";
+    dayInput.style.border = "1px solid red";
+    if (day) {
+      dayInput.style.border = "";
     }
-  else if(isNaN(day) || isNaN(month) || isNaN(year)){
-        errorContent.textContent = "Please enter numbers only"
+  } else if (month > 12) {
+    errorContent.textContent = "Enter a valid month";
+    monthInput.style.border = "1px solid red";
+    if (month) {
+      monthInput.style.border = "";
     }
+  }
 });
