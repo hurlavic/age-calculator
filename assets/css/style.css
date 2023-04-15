@@ -7,6 +7,7 @@ body {
   background-color: rgb(87, 87, 87);
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -78,3 +79,16 @@ hr {
   width: 80%;
   margin-top: 8%;
 }
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 1%;
+    color: white;
+  }
+
+  .attribution a {
+    color: hsl(0, 0%, 100%);
+  }
